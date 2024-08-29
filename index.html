@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+    
+    <script>
+      function logar(event) {
+        // Previne o comportamento padrão do formulário
+        event.preventDefault();
+
+        // Obtém os valores dos campos
+        var email = document.getElementById('email').value;
+        var senha = document.getElementById('password').value;
+
+        // Valida o login e senha
+        if (email === "vcamposjoao@gmail.com" && senha === "admin") {
+          alert('Sucesso');
+          location.href = "home.html";
+        } else {
+          alert('Usuário ou senha incorretos');
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main class="login">
+      <form class="container" onsubmit="logar(event)">
+        <h1 class="headline">Bem-vindo(a)</h1>
+        <h2 class="subheadline">Insira seus dados de acesso</h2>
+        
+        <div class="form">
+          <label class="label-email" for="email">E-mail</label>
+          <i class="bx bxs-user"></i>
+          <input class="input-email" type="email" id="email" placeholder="Email:" autocomplete="off">
+  
+          <label class="label-password" for="password">Senha</label>
+          <i class="bx bxs-key"></i>
+          <input class="input-password" type="password" id="password" placeholder="Senha:">
+
+          <a class="forgot">Esqueceu a senha?</a>
+
+          <input class="button" type="submit" value="Login">
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
